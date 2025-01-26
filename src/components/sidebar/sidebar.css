@@ -1,0 +1,132 @@
+.aside{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: var(--body-color);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    width: 110px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.nav__logo{
+    text-decoration: none;
+    color: black;
+}
+
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.nav__link{
+    font-size: 1.5rem;
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+    transition: 0.3s;
+    position: relative;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.nav__link:hover{
+    color: hsl(43, 100%, 68%);
+}
+
+.nav__link::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.nav__link:hover::before {
+    opacity: 1;
+}
+
+.nav__link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 150%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: var(--title-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: normal;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav__link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    left: 130%;
+}
+
+
+.nav__toggle{
+    position: fixed;
+    top: 1.2rem;
+    left: 1.875rem;
+    cursor: pointer;
+    height: 40px;
+    width: 45px;
+    background-color: var(--body-color);
+    border: 1px solid #e8dfec;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: .3s;
+}
+
+@media screen and (max-width: 1024px){
+    .aside{
+      left: -110px;
+    }
+
+    .nav__toggle{
+        display: flex;
+    }
+
+    .nav__toggle-open{
+        left: 140px;
+
+    }
+
+    .show-menu{
+        left: 0;
+    }
+
+
+
+    
+  }
+  
+  

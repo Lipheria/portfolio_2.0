@@ -1,0 +1,68 @@
+.projects__container{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;  /* Adds 2rem spacing between grid items */
+}
+
+.projects__item{
+    padding: 1.875rem 2.5rem;
+    background-color: var(--container-color);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+} 
+
+.projects__plan{
+    margin: 1.25rem 0;
+    font-size: var(--h2-font-size);
+}
+
+.projects__title{
+    margin-bottom: 1rem;
+}
+
+.projects__item .btn{
+    margin-top: 1.25rem;
+}
+
+.projects__item img {
+    width: 100%;
+    height: 200px;  /* You can adjust this value based on your needs */
+    object-fit: cover;  /* This ensures images maintain aspect ratio without distortion */
+}
+
+@media screen and (max-width: 1024px){
+    .projects__container{
+        grid-template-columns: repeat(2, 330px);
+        justify-content: center;
+        row-gap: 1.875rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .projects__container{
+        grid-template-columns: 330px;  /* Changed to single column with fixed width */
+        justify-content: center;
+        row-gap: 1.875rem;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .projects__container{
+        grid-template-columns: minmax(280px, 1fr);  /* Responsive single column */
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .projects__item{
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;  /* Center the items */
+        padding: 1.5rem;
+    }
+
+    .projects__item img {
+        height: 180px;
+    }
+}
