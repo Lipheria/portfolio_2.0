@@ -5,6 +5,7 @@ import Socials from "./socials"
 import ScrollDown from './scrolldown'
 import me from "../../assets/avatar-1.png"
 import Typed from 'typed.js';
+import cv from "../../Mayowa Mike-Adeogun RESUME.pdf"
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
   }, []);
 
 
+
   return (
     <section className="home container" id='home'>
       <div className="intro">
@@ -38,7 +40,7 @@ const Home = () => {
         <h1 className='home__name typewriter' ref={el}></h1>
         <span className="home__education">I'm a developer</span>
         <Socials />
-        <a href="" className="btn">Here's my CV</a>
+        <a href={cv} download className="btn">Here's my CV</a>
         <ScrollDown></ScrollDown>
       </div>
     </section>
