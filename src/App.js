@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
+      <Home />
       <main>
-        <Home />
         <About2 />
         {/* <About /> */}
         <Services />
